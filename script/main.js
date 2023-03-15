@@ -1,7 +1,7 @@
-import { sendPostRequest } from './post';
-import { sendGetRequest } from './get';
-import { sendPutRequest } from './put';
-import { sendDeleteRequest } from './delete';
+import { deleteData } from "./delete.js";
+import { getData } from "./get.js";
+import { postData } from "./post.js";
+import { deleteData } from "./delete.js";
 
 const postBtn = document.getElementById('postBtn');
 const getBtn = document.getElementById('getBtn');
@@ -13,22 +13,23 @@ const responseOutput = document.getElementById('response');
 postBtn.addEventListener('click', (event) => {
   event.preventDefault();
   const formData = new FormData(form);
-  sendPostRequest(formData);
+  postData(formData, responseOutput);
 });
 
-getBtn.addEventListener('click', (event) => {
+getBtn.addEventListener('click', (event) =>{
   event.preventDefault();
   const id = document.querySelector('#id').value;
-  sendGetRequest(id);
+  getData(id, responseOutput);
 });
 
 putBtn.addEventListener('click', (event) => {
   event.preventDefault();
   const formData = new FormData(form);
-  sendPutRequest(formData);
+  putData(formData, responseOutput);
 });
 
-deleteBtn.addEventListener('click', (event) => {
+deleteBtn.addEventListener('click', (event) =>{
   event.preventDefault();
-  sendDeleteRequest();
+  deleteData(responseOutput);
 });
+

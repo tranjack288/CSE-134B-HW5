@@ -1,4 +1,3 @@
-
 const postBtn = document.getElementById('postBtn');
 const getBtn = document.getElementById('getBtn');
 const putBtn = document.getElementById('putBtn');
