@@ -8,7 +8,7 @@ class ButtonCount extends HTMLElement{
         <button><slot>Times Clicked: 0</slot></button>
         `;
         shadowRoot.appendChild(template.content.cloneNode(true));
-        
+
         const button = shadowRoot.querySelector("button");
         let count = 0;
         button.addEventListener('click',()=>{

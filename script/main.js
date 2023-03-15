@@ -1,7 +1,7 @@
 import { deleteData } from "./delete.js";
 import { getData } from "./get.js";
 import { postData } from "./post.js";
-import { deleteData } from "./delete.js";
+import { putData } from "./put.js";
 
 const postBtn = document.getElementById('postBtn');
 const getBtn = document.getElementById('getBtn');
@@ -33,3 +33,4 @@ deleteBtn.addEventListener('click', (event) =>{
   deleteData(responseOutput);
 });
 
+responseOutput.innerHTML = DOMPurify.sanitize(responseOutput.innerHTML);
